@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+
+# Node.js / JavaScript
+node_modules/
+npm-debug.log
+
+# Dossiers de build
+dist/
+build/
+
+# Visual Studio Code
+.vscode/
+
+# Logs
+*.log
+
+# MacOS
+.DS_Store
