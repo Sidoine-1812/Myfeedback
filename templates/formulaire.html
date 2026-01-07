@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Envoyer un avis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            width: 500px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            resize: vertical;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Partagez vos inquiétudes ou remarques</h1>
+        <p>Merci de prendre quelques instants pour nous donner votre avis. Le champ "Avis" est obligatoire, la suggestion est optionnelle.</p>
+
+        <form method="POST" action="/analyse">
+            <label for="texte_avis">Avis (obligatoire) :</label>
+            <textarea name="texte_avis" rows="5" required></textarea>
+
+            <label for="suggestion">Suggestion (facultative) :</label>
+            <textarea name="suggestion" rows="3"></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+</body>
+</html>
