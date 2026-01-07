@@ -1,81 +1,229 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Envoyer un avis</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Client | Design Sombre</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        :root {
+            --dark-bg: #1a202c; /* Couleur de fond principale sombre */
+            --dark-card: #2d3748; /* Couleur des blocs plus foncée */
+            --text-light: #e2e8f0; /* Texte clair */
+            --text-muted: #a0aec0; /* Texte secondaire / placeholder */
+            --accent-color: #63b3ed; /* Bleu clair pour accents */
+            --accent-hover: #4299e1;
+            --border-dark: #4a5568;
+            --input-bg: #2d3748;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f7f8;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            background-image: radial-gradient(#2d3748 1px, transparent 1px), radial-gradient(#2d3748 1px, transparent 1px);
+            background-position: 0 0, 25px 25px;
+            background-size: 50px 50px;
         }
 
-        .container {
-            background-color: #fff;
-            padding: 30px 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            width: 500px;
+        .main-wrapper {
+            display: flex;
+            flex-direction: column; /* Pour mobile */
+            gap: 40px;
+            width: 100%;
+            max-width: 1000px; /* Largeur maximale de l'ensemble */
         }
 
-        h1 {
+        @media (min-width: 768px) {
+            .main-wrapper {
+                flex-direction: row; /* Deux colonnes sur desktop */
+                justify-content: space-between;
+                align-items: flex-start; /* Alignement en haut */
+            }
+        }
+
+        .header-section {
+            flex: 1; /* Prend l'espace disponible */
+            padding: 20px;
+        }
+
+        .header-section h1 {
+            font-size: 2.5rem; /* Plus grand titre */
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-light);
+            line-height: 1.2;
+        }
+
+        .header-section p.description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .form-card {
+            flex: 1.2; /* Prend un peu plus d'espace pour le formulaire */
+            background-color: var(--dark-card);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-dark);
+            max-width: 500px; /* Limite la largeur du formulaire lui-même */
+        }
+        
+        @media (min-width: 768px) {
+             .form-card {
+                margin-left: 40px; /* Espacement entre les sections */
+            }
+        }
+
+        .form-card h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 25px;
             text-align: center;
-            color: #333;
         }
 
-        p {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 20px;
+        .form-group {
+            margin-bottom: 25px;
         }
 
         label {
-            font-weight: bold;
-            color: #333;
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+        }
+
+        label i {
+            margin-right: 8px;
+            color: var(--accent-color);
+        }
+
+        .required-dot {
+            color: #fc8181; /* Rouge plus doux */
+            margin-left: 5px;
         }
 
         textarea {
             width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
+            padding: 12px 18px;
+            background-color: var(--input-bg);
+            border: 1px solid var(--border-dark);
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            color: var(--text-light);
+            transition: all 0.2s ease;
+            box-sizing: border-box;
             resize: vertical;
-            font-size: 14px;
         }
 
-        button {
-            background-color: #007BFF;
-            color: white;
-            padding: 10px 20px;
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(99, 179, 237, 0.2);
+        }
+
+        textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--accent-color);
+            color: var(--dark-bg); /* Texte foncé sur bouton clair */
+            padding: 14px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
             cursor: pointer;
-            font-size: 16px;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
         }
 
-        button:hover {
-            background-color: #0056b3;
+        .btn-submit:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Partagez vos inquiétudes ou remarques</h1>
-        <p>Merci de prendre quelques instants pour nous donner votre avis. Le champ "Avis" est obligatoire, la suggestion est optionnelle.</p>
+    <div class="main-wrapper">
+        <div class="header-section">
+            <h1>Contribuez à notre amélioration continue</h1>
+            <p class="description">
+                Votre avis est précieux et nous aide à façonner l'avenir de nos services.
+                Qu'il s'agisse d'une remarque, d'une préoccupation ou d'une suggestion innovante,
+                chaque contribution est étudiée avec la plus grande attention.
+            </p>
+            <p class="description">
+                Nous nous engageons à prendre en compte vos retours pour toujours mieux vous servir.
+            </p>
+            <div class="footer-note">
+                <i class="fas fa-magic"></i> Analyse intelligente des retours par Groq AI.
+            </div>
+        </div>
 
-        <form method="POST" action="/analyse">
-            <label for="texte_avis">Avis (obligatoire) :</label>
-            <textarea name="texte_avis" rows="5" required></textarea>
+        <div class="form-card">
+            <h2>Laissez votre feedback</h2>
+            <form method="POST" action="/analyse">
+                <div class="form-group">
+                    <label for="texte_avis">
+                        <i class="fas fa-comment-alt"></i> Votre avis ou préoccupation <span class="required-dot">*</span>
+                    </label>
+                    <textarea 
+                        name="texte_avis" 
+                        id="texte_avis" 
+                        rows="6" 
+                        placeholder="Exprimez-vous ici. Que pensez-vous de nos services ? Qu'est-ce qui pourrait être amélioré ?" 
+                        required></textarea>
+                </div>
 
-            <label for="suggestion">Suggestion (facultative) :</label>
-            <textarea name="suggestion" rows="3"></textarea>
+                <div class="form-group">
+                    <label for="suggestion">
+                        <i class="fas fa-lightbulb"></i> Une suggestion d'amélioration ?
+                    </label>
+                    <textarea 
+                        name="suggestion" 
+                        id="suggestion" 
+                        rows="4" 
+                        placeholder="Optionnel : Partagez une idée ou une fonctionnalité que vous aimeriez voir."></textarea>
+                </div>
 
-            <button type="submit">Envoyer</button>
-        </form>
+                <button type="submit" class="btn-submit">
+                    <i class="fas fa-paper-plane"></i> Envoyer le Feedback
+                </button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
