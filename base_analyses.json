@@ -1,0 +1,25 @@
+[
+    {
+        "date": "26/01/2026 12:31",
+        "rapport": {
+            "titre_resume": "Problèmes avec le paiement",
+            "explication_complete": "L'utilisateur a rencontré des difficultés lors du paiement, notamment lors de la validation avec sa carte Visa. Le système d'enregistrement de paiement n'a pas fonctionné correctement, causant à l'utilisateur l'anxiété d'être débité plusieurs fois. Cela montre un manque de confiance de la part du client envers le système de paiement en place.",
+            "sentiment": "Négatif",
+            "priorite": 4,
+            "action_recommandee": [
+                "Réparer le système de paiement",
+                "Ajouter une confirmation par email immédiate pour garantir que les transactions sont bien effectuées"
+            ]
+        }
+    },
+    {
+        "date": "26/01/2026 12:22",
+        "rapport": {
+            "titre_resume": "Frustration avec l'interface",
+            "explication_complete": "L'utilisateur a exprimé sa frustration quant à l'interface et à la difficulté de trouver le bouton de paiement. La lenteur de l'interface a également contribué à sa déception. Cela montre que l'utilisateur a des attentes liées à un expérience utilisateur rapide et intuitive. La difficulté de trouver le bouton de paiement suggère également que l'interface n'est pas claire ou bien organisée. Il semble que l'utilisateur soit en train de chercher une expérience plus fluide et plus intuitive.",
+            "sentiment": "Négatif",
+            "priorite": 4,
+            "action_recommandee": "Optimiser l'interface pour améliorer la rapidité et la clarté, mettre en évidence le bouton de paiement (par exemple, en le mettant en rouge) pour faciliter sa localisation."
+        }
+    }
+]
